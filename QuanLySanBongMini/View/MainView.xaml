@@ -1,0 +1,218 @@
+<Window x:Class="QuanLySanBongMini.View.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        xmlns:vm="clr-namespace:QuanLySanBongMini.ViewModels"
+        xmlns:local="clr-namespace:QuanLySanBongMini.View"
+        
+        x:Name="wdMain"
+        mc:Ignorable="d"
+        Title="Hệ Thống Quản Lý Cho Sân Bóng Đá Mini"
+        Height="450" Width="800"
+        WindowState="Maximized">
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:DanhSachChoThanhToanViewModel}">
+            <local:DanhSachChoThanhToanView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:DatSanViewModel}">
+            <local:DatSanView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:KhachHangViewModel}">
+            <local:KhachHangView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ThongKeViewModel}">
+            <local:ThongKeView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:NhanVienViewModel}">
+            <local:NhanVienView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:SanBongViewModel}">
+            <local:SanBongView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:QuanLyMenuViewModel}">
+            <local:QuanLyMenuView/>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="ForestGreen">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Margin="15,25,15,20">
+                    <TextBlock Text="⚽ SÂN BÓNG MINI" Foreground="White" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Separator Margin="0,15,0,0" Background="#334155"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Margin="8,0">
+                    <StackPanel.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="Height"               Value="44"/>
+                            <Setter Property="Margin"               Value="0,2"/>
+                            <Setter Property="Background"           Value="Transparent"/>
+                            <Setter Property="Foreground"           Value="White"/>
+                            <Setter Property="BorderThickness"      Value="0"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                            <Setter Property="Padding"              Value="14,0"/>
+                            <Setter Property="Cursor"               Value="Hand"/>
+                            <Setter Property="FontSize"             Value="13"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border x:Name="bdr" Background="{TemplateBinding Background}"
+                                                CornerRadius="8" Padding="{TemplateBinding Padding}">
+                                            <ContentPresenter VerticalAlignment="Center"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="bdr" Property="Background" Value="#1a7a3a"/>
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter TargetName="bdr" Property="Background" Value="#155c2c"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </StackPanel.Resources>
+
+                    <!-- Separator nhóm 1: Nghiệp vụ -->
+                    <TextBlock Text="NGHIỆP VỤ" Foreground="#86efac" FontSize="10"
+                               FontWeight="Bold" Margin="14,10,0,4"/>
+
+                    <Button Command="{Binding ShowDatSanCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="📋" FontSize="16" Width="24" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="  Đặt Sân" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Command="{Binding ShowChoThanhToanCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="🕐" FontSize="16" Width="24" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="  Chờ Thanh Toán" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+
+                    <!-- Separator nhóm 2: Quản lý -->
+                    <TextBlock Text="QUẢN LÝ" Foreground="#86efac" FontSize="10"
+                               Visibility="{Binding ChiQuanLy}"
+                               FontWeight="Bold" Margin="14,12,0,4"/>
+
+                    <Button Command="{Binding ShowKhachHangCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="👥" FontSize="16" Width="24" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="  Khách Hàng" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Command="{Binding ShowSanBongCommand}" Visibility="{Binding ChiQuanLy}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="🏟️" FontSize="16" Width="24" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="  Sân Bóng" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Command="{Binding ShowNhanVienCommand}" Visibility="{Binding ChiQuanLy}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="🪪" FontSize="16" Width="24" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="  Nhân Viên" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Command="{Binding ShowQuanLyMenuCommand}" Visibility="{Binding ChiQuanLy}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="🍔" FontSize="16" Width="24" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="  Quản Lý Menu" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+
+                    <!-- Separator nhóm 3: Báo cáo -->
+                    <TextBlock Text="BÁO CÁO" Foreground="#86efac" FontSize="10"
+                               Visibility="{Binding ChiQuanLy}"
+                               FontWeight="Bold" Margin="14,12,0,4"/>
+
+                    <Button Command="{Binding ShowThongKeCommand}" Visibility="{Binding ChiQuanLy}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="📊" FontSize="16" Width="24" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="  Thống Kê" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+                <Button Grid.Row="2" Content="🚪 Đăng Xuất" 
+                    Command="{Binding DangXuatCommand}"
+                    CommandParameter="{Binding ElementName=wdMain}"
+                    Height="40" Margin="15,20" Background="#EF4444" Foreground="White" 
+                    FontWeight="Bold" BorderThickness="0" Cursor="Hand">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Background="White">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="1" Color="Gray" Opacity="0.1"/>
+                </Border.Effect>
+                <Grid Margin="20,0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <TextBlock Text="Xin chào, " VerticalAlignment="Center" Foreground="#6B7280" FontSize="14"/>
+                        <TextBlock Text="{Binding CurrentUser.HoTen}" VerticalAlignment="Center" Foreground="#1F2937" FontSize="14" FontWeight="Bold" Margin="0,0,5,0"/>
+                        <Border CornerRadius="10" Padding="8,3" Margin="0,0,0,0">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Background" Value="#DCFCE7"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding CurrentUser.VaiTro}" Value="Nhân viên">
+                                            <Setter Property="Background" Value="#DBEAFE"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <TextBlock VerticalAlignment="Center" FontSize="11" FontWeight="SemiBold">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Text" Value="👑 Quản lý"/>
+                                        <Setter Property="Foreground" Value="#065F46"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding CurrentUser.VaiTro}" Value="Nhân viên">
+                                                <Setter Property="Text" Value="👤 Nhân viên"/>
+                                                <Setter Property="Foreground" Value="#1D4ED8"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Margin="20">
+                <ContentControl Content="{Binding CurrentView}"/>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,192 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|c:\\users\\asrock\\downloads\\quanlysanbongmini_newbiestyle\\quanlysanbongmini\\quanlysanbongmini\\report\\baocaocrystalreport.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}",
+      "RelativeMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\report\\baocaocrystalreport.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\quanlysanbongmini\\view\\thongkeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\view\\thongkeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|QuanLySanBongMini||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\quanlysanbongmini\\viewmodels\\thongkeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\viewmodels\\thongkeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\quanlysanbongmini\\report\\baocaohelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\report\\baocaohelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\quanlysanbongmini\\report\\baocaodataset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\report\\baocaodataset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\quanlysanbongmini\\report\\baocaodataset.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
+      "RelativeMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\report\\baocaodataset.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\quanlysanbongmini\\viewmodels\\nhanvienviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\viewmodels\\nhanvienviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\quanlysanbongmini\\viewmodels\\paymentdialogviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\viewmodels\\paymentdialogviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\quanlysanbongmini\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\quanlysanbongmini\\viewmodels\\khachhangviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C921159C-A1E3-43A4-94E0-BA5739DB6CD2}|QuanLySanBongMini\\QuanLySanBongMini.csproj|solutionrelative:quanlysanbongmini\\viewmodels\\khachhangviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "QuanLySanBongMini",
+              "DocumentMoniker": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\QuanLySanBongMini.csproj",
+              "RelativeDocumentMoniker": "QuanLySanBongMini\\QuanLySanBongMini.csproj",
+              "ToolTip": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\QuanLySanBongMini.csproj",
+              "RelativeToolTip": "QuanLySanBongMini\\QuanLySanBongMini.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-06-09T14:05:06.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ThongKeView.xaml",
+              "DocumentMoniker": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\View\\ThongKeView.xaml",
+              "RelativeDocumentMoniker": "QuanLySanBongMini\\View\\ThongKeView.xaml",
+              "ToolTip": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\View\\ThongKeView.xaml",
+              "RelativeToolTip": "QuanLySanBongMini\\View\\ThongKeView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T14:02:19.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BaoCaoHelper.cs",
+              "DocumentMoniker": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\Report\\BaoCaoHelper.cs",
+              "RelativeDocumentMoniker": "QuanLySanBongMini\\Report\\BaoCaoHelper.cs",
+              "ToolTip": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\Report\\BaoCaoHelper.cs",
+              "RelativeToolTip": "QuanLySanBongMini\\Report\\BaoCaoHelper.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAA1wDIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T13:50:12.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BaoCaoCrystalReport.rpt",
+              "DocumentMoniker": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\Report\\BaoCaoCrystalReport.rpt",
+              "RelativeDocumentMoniker": "QuanLySanBongMini\\Report\\BaoCaoCrystalReport.rpt",
+              "ToolTip": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\Report\\BaoCaoCrystalReport.rpt",
+              "RelativeToolTip": "QuanLySanBongMini\\Report\\BaoCaoCrystalReport.rpt",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIeSURBVDhPpZJNSFRRFMd/9973ZnIaswwiWvSFmyFNFyEUTlC4qDYptghaSOAmoY3QojZFVkLuIqZ2FhVCYGOLFhERRBs3MkP0IWmZ5geaOo06M76v28Ia581r1w/O4lzO\u002BZ9z7jnwP2itRamfGEzpUr\u002BczpYGX3yAxGBKu56nXc/T5SQGU/pfBWTgQQim5leYnFv2GcCF0/WBLgMCAFKKgAHce56GslF9Akquu0qKot3xepFC0BqvoTVeQ0tTDVXRcDHHJ/AnHyUlSkqSYoAH0/eJTzWgpMRQEtPwN\u002B3zTKUAMJTg5vwN2ORQKbew7GU5MnGw2FUpxt6OT61C6ONA9fBXj1O/LLpnryKlwciPMZbnsgBknSyNk3UMH/vgExD5vNW2Wlhrfj\u002Be23NrYOnkdEYSj4UZajhDxf4wM\u002BkZvj0Zg0XIDdgAJN\u002BNcq45JgBk5/X\u002B5KXbz7oMN3vlbsd2jsZCvEwVsPofExGVUNCQgULS8W0kwPnLD0Xy7YheyKzos73juvbiqD7U9UUf6K/Tq/k1bdmuth1XW7arn74ZCa6xr6ddh0MmVdEKmmIRtkYNTNPkUf0LLNtFqfXqSglMtfH3gUMqOJCe8KiuCrGr2qBg2TiOWx5WxDdQ36tJ/Xk2zOKqZHPI4/DuDAuLC\u002BzcsY1IZON4AE407hOUC\u002BTzVlvesq9lsrnan0src0Pp8e7hjxOvge99Pe250ti//Aa4Se8VLBKf0wAAAABJRU5ErkJggg==",
+              "WhenOpened": "2026-06-09T13:41:44.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BaoCaoDataSet.cs",
+              "DocumentMoniker": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\Report\\BaoCaoDataSet.cs",
+              "RelativeDocumentMoniker": "QuanLySanBongMini\\Report\\BaoCaoDataSet.cs",
+              "ToolTip": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\Report\\BaoCaoDataSet.cs",
+              "RelativeToolTip": "QuanLySanBongMini\\Report\\BaoCaoDataSet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T13:34:35.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BaoCaoDataSet.xsd",
+              "DocumentMoniker": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\Report\\BaoCaoDataSet.xsd",
+              "RelativeDocumentMoniker": "QuanLySanBongMini\\Report\\BaoCaoDataSet.xsd",
+              "ToolTip": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\Report\\BaoCaoDataSet.xsd",
+              "RelativeToolTip": "QuanLySanBongMini\\Report\\BaoCaoDataSet.xsd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
+              "WhenOpened": "2026-06-09T13:33:28.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ThongKeViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\ViewModels\\ThongKeViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLySanBongMini\\ViewModels\\ThongKeViewModel.cs",
+              "ToolTip": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\ViewModels\\ThongKeViewModel.cs",
+              "RelativeToolTip": "QuanLySanBongMini\\ViewModels\\ThongKeViewModel.cs",
+              "ViewState": "AgIAAIoBAAAAAAAAAAAAAJ8BAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T12:02:01.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PaymentDialogViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\ViewModels\\PaymentDialogViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLySanBongMini\\ViewModels\\PaymentDialogViewModel.cs",
+              "ToolTip": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\ViewModels\\PaymentDialogViewModel.cs",
+              "RelativeToolTip": "QuanLySanBongMini\\ViewModels\\PaymentDialogViewModel.cs",
+              "ViewState": "AgIAACEBAAAAAAAAAAAowAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T11:59:49.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NhanVienViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\ViewModels\\NhanVienViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLySanBongMini\\ViewModels\\NhanVienViewModel.cs",
+              "ToolTip": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\ViewModels\\NhanVienViewModel.cs",
+              "RelativeToolTip": "QuanLySanBongMini\\ViewModels\\NhanVienViewModel.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T11:59:48.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLySanBongMini\\ViewModels\\MainViewModel.cs",
+              "ToolTip": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "QuanLySanBongMini\\ViewModels\\MainViewModel.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T11:59:42.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "KhachHangViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\ViewModels\\KhachHangViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLySanBongMini\\ViewModels\\KhachHangViewModel.cs",
+              "ToolTip": "C:\\Users\\ASROCK\\Downloads\\QuanLySanBongMini_NewbieStyle\\QuanLySanBongMini\\QuanLySanBongMini\\ViewModels\\KhachHangViewModel.cs",
+              "RelativeToolTip": "QuanLySanBongMini\\ViewModels\\KhachHangViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T11:59:28.605Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

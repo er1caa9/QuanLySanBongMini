@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLYSANBONGMINIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ChiTietHoaDon">
+    <Key>
+      <PropertyRef Name="MaCTHD" />
+    </Key>
+    <Property Name="MaCTHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaHD" Type="Int32" Nullable="false" />
+    <Property Name="MoTa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DonGia" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="ThanhTien" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="HoaDon" Relationship="Self.FK__ChiTietHoa__MaHD__5AEE82B9" FromRole="ChiTietHoaDon" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="DatSan">
+    <Key>
+      <PropertyRef Name="MaDatSan" />
+    </Key>
+    <Property Name="MaDatSan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaKH" Type="Int32" Nullable="false" />
+    <Property Name="MaSan" Type="Int32" Nullable="false" />
+    <Property Name="TGBatDau" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TGKetThuc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TongTien" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TrangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="KhachHang" Relationship="Self.FK__DatSan__MaKH__52593CB8" FromRole="DatSan" ToRole="KhachHang" />
+    <NavigationProperty Name="SanBong" Relationship="Self.FK__DatSan__MaSan__534D60F1" FromRole="DatSan" ToRole="SanBong" />
+    <NavigationProperty Name="HoaDons" Relationship="Self.FK__HoaDon__MaDatSan__571DF1D5" FromRole="DatSan" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaDatSan" Type="Int32" />
+    <Property Name="MaNV" Type="Int32" Nullable="false" />
+    <Property Name="NgayLap" Type="DateTime" Precision="3" />
+    <Property Name="TongTien" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LoaiHD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ChiTietHoaDons" Relationship="Self.FK__ChiTietHoa__MaHD__5AEE82B9" FromRole="HoaDon" ToRole="ChiTietHoaDon" />
+    <NavigationProperty Name="DatSan" Relationship="Self.FK__HoaDon__MaDatSan__571DF1D5" FromRole="HoaDon" ToRole="DatSan" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK__HoaDon__MaNV__5812160E" FromRole="HoaDon" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HoTen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NgayDangKy" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DatSans" Relationship="Self.FK__DatSan__MaKH__52593CB8" FromRole="KhachHang" ToRole="DatSan" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HoTen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VaiTro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HoaDons" Relationship="Self.FK__HoaDon__MaNV__5812160E" FromRole="NhanVien" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="SanBong">
+    <Key>
+      <PropertyRef Name="MaSan" />
+    </Key>
+    <Property Name="MaSan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenSan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoaiSan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GiaThueGio" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TrangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DatSans" Relationship="Self.FK__DatSan__MaSan__534D60F1" FromRole="SanBong" ToRole="DatSan" />
+  </EntityType>
+  <Association Name="FK__ChiTietHoa__MaHD__5AEE82B9">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
+    <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="ChiTietHoaDon">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DatSan__MaKH__52593CB8">
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
+    <End Role="DatSan" Type="Self.DatSan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="DatSan">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DatSan__MaSan__534D60F1">
+    <End Role="SanBong" Type="Self.SanBong" Multiplicity="1" />
+    <End Role="DatSan" Type="Self.DatSan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanBong">
+        <PropertyRef Name="MaSan" />
+      </Principal>
+      <Dependent Role="DatSan">
+        <PropertyRef Name="MaSan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDon__MaDatSan__571DF1D5">
+    <End Role="DatSan" Type="Self.DatSan" Multiplicity="0..1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DatSan">
+        <PropertyRef Name="MaDatSan" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="MaDatSan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDon__MaNV__5812160E">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLYSANBONGMINIEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ChiTietHoaDons" EntityType="Self.ChiTietHoaDon" />
+    <EntitySet Name="DatSans" EntityType="Self.DatSan" />
+    <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
+    <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
+    <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
+    <EntitySet Name="SanBongs" EntityType="Self.SanBong" />
+    <AssociationSet Name="FK__ChiTietHoa__MaHD__5AEE82B9" Association="Self.FK__ChiTietHoa__MaHD__5AEE82B9">
+      <End Role="HoaDon" EntitySet="HoaDons" />
+      <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DatSan__MaKH__52593CB8" Association="Self.FK__DatSan__MaKH__52593CB8">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="DatSan" EntitySet="DatSans" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DatSan__MaSan__534D60F1" Association="Self.FK__DatSan__MaSan__534D60F1">
+      <End Role="SanBong" EntitySet="SanBongs" />
+      <End Role="DatSan" EntitySet="DatSans" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDon__MaDatSan__571DF1D5" Association="Self.FK__HoaDon__MaDatSan__571DF1D5">
+      <End Role="DatSan" EntitySet="DatSans" />
+      <End Role="HoaDon" EntitySet="HoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDon__MaNV__5812160E" Association="Self.FK__HoaDon__MaNV__5812160E">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="HoaDon" EntitySet="HoaDons" />
+    </AssociationSet>
+    <EntitySet Name="MonAns" EntityType="QLYSANBONGMINIModel.MonAn" />
+  </EntityContainer>
+  <EntityType Name="MonAn">
+    <Key>
+      <PropertyRef Name="MaMon" />
+    </Key>
+    <Property Name="MaMon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenMon" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LoaiMon" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DonGia" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="MoTa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ConHang" Type="Boolean" Nullable="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,288 @@
+<Window x:Class="QuanLySanBongMini.View.PaymentDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Thanh Toán" Height="660" Width="1000"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+
+    <Window.Resources>
+        <!-- Nút món ăn -->
+        <Style x:Key="BtnMon" TargetType="Button">
+            <Setter Property="Height"          Value="40"/>
+            <Setter Property="Margin"          Value="0,0,0,6"/>
+            <Setter Property="Background"      Value="White"/>
+            <Setter Property="BorderBrush"     Value="#E5E7EB"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Cursor"          Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="6" Padding="10,0">
+                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background"  Value="#F0FDF4"/>
+                                <Setter Property="BorderBrush" Value="#10B981"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!-- Nút chính -->
+        <Style x:Key="BtnPrimary" TargetType="Button">
+            <Setter Property="Height"          Value="42"/>
+            <Setter Property="FontWeight"      Value="Bold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor"          Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="6"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>       <!-- Cột trái: Menu gọi món -->
+            <ColumnDefinition Width="360"/>     <!-- Cột phải: Thanh toán   -->
+        </Grid.ColumnDefinitions>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             CỘT TRÁI — MENU GỌI MÓN
+        ════════════════════════════════════════════════════════════════ -->
+        <Grid Grid.Column="0" Background="#F9FAFB">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>   <!-- Header -->
+                <RowDefinition Height="Auto"/>   <!-- Tab    -->
+                <RowDefinition Height="*"/>      <!-- Danh sách món -->
+                <RowDefinition Height="Auto"/>   <!-- Giỏ hàng -->
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Border Grid.Row="0" Background="#10B981" Padding="20,14">
+                <TextBlock Text="🍔  GỌI ĐỒ ĂN / ĐỒ UỐNG"
+                           FontSize="16" FontWeight="Bold" Foreground="White"/>
+            </Border>
+
+            <!-- Tab Đồ uống / Đồ ăn -->
+            <Border Grid.Row="1" Background="White" Padding="16,10"
+                    BorderBrush="#E5E7EB" BorderThickness="0,0,0,1">
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton Content="🥤  Đồ uống" IsChecked="{Binding HienDoUong, Mode=TwoWay}"
+                                 FontSize="13" FontWeight="SemiBold" Margin="0,0,24,0" Cursor="Hand"/>
+                    <RadioButton Content="🍱  Đồ ăn"   IsChecked="{Binding HienDoAn,   Mode=TwoWay}"
+                                 FontSize="13" FontWeight="SemiBold" Cursor="Hand"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Danh sách món bấm chọn -->
+            <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Padding="16,12,16,4">
+                <ItemsControl ItemsSource="{Binding DanhSachMonHienThi}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Style="{StaticResource BtnMon}"
+                                    Command="{Binding DataContext.ThemMonCommand,
+                                             RelativeSource={RelativeSource AncestorType=Window}}"
+                                    CommandParameter="{Binding}">
+                                <Grid Margin="4,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="90"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="{Binding TenMon}"
+                                               FontSize="13" Foreground="#1F2937"
+                                               VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Column="1"
+                                               Text="{Binding DonGia, StringFormat='{}{0:N0} đ'}"
+                                               FontSize="13" FontWeight="SemiBold" Foreground="#10B981"
+                                               HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+
+            <!-- Giỏ hàng -->
+            <Border Grid.Row="3" Background="White" BorderBrush="#E5E7EB"
+                    BorderThickness="0,1,0,0" Padding="16,12">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="130"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Text="📋  Món đã gọi:"
+                               FontWeight="SemiBold" FontSize="13" Margin="0,0,0,8"/>
+
+                    <DataGrid Grid.Row="1"
+                              ItemsSource="{Binding GioHang}"
+                              AutoGenerateColumns="False" IsReadOnly="True"
+                              GridLinesVisibility="Horizontal"
+                              HorizontalGridLinesBrush="#F3F4F6"
+                              BorderThickness="1" BorderBrush="#E5E7EB"
+                              FontSize="12" CanUserResizeColumns="False"
+                              CanUserReorderColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Tên món" Binding="{Binding TenMon}" Width="*"/>
+                            <DataGridTextColumn Header="SL"      Binding="{Binding SoLuong}" Width="40">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Tiền"
+                                Binding="{Binding ThanhTien, StringFormat='{}{0:N0}'}" Width="80">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                                        <Setter Property="Padding"             Value="0,0,4,0"/>
+                                        <Setter Property="Foreground"          Value="#EF4444"/>
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <!-- Nút xóa bớt 1 -->
+                            <DataGridTemplateColumn Width="28">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="✕" FontSize="10" Background="Transparent"
+                                                BorderThickness="0" Foreground="#9CA3AF" Cursor="Hand"
+                                                Command="{Binding DataContext.XoaMonGioCommand,
+                                                         RelativeSource={RelativeSource AncestorType=Window}}"
+                                                CommandParameter="{Binding}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <!-- Tổng tiền đồ ăn/uống -->
+                    <StackPanel Grid.Row="2" Orientation="Horizontal"
+                                HorizontalAlignment="Right" Margin="0,8,0,0">
+                        <TextBlock Text="Tiền đồ ăn/uống: " FontSize="13" Foreground="#6B7280"/>
+                        <TextBlock Text="{Binding TienDoAnUong, StringFormat='{}{0:N0} đ'}"
+                                   FontSize="14" FontWeight="Bold" Foreground="#F59E0B"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             CỘT PHẢI — THANH TOÁN
+        ════════════════════════════════════════════════════════════════ -->
+        <Border Grid.Column="1" Background="White"
+                BorderBrush="#E5E7EB" BorderThickness="1,0,0,0" Padding="24,20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="XÁC NHẬN THANH TOÁN"
+                           FontSize="17" FontWeight="Bold" Foreground="#1F2937"
+                           HorizontalAlignment="Center" Margin="0,0,0,16"/>
+
+                <StackPanel Grid.Row="1">
+                    <!-- Thông tin sân -->
+                    <Border Background="#F0FDF4" CornerRadius="8" Padding="14,12" Margin="0,0,0,14">
+                        <StackPanel>
+                            <Grid Margin="0,0,0,6">
+                                <TextBlock Text="Sân:" Foreground="#6B7280" FontSize="13"/>
+                                <TextBlock Text="{Binding TenSan}" FontWeight="SemiBold"
+                                           HorizontalAlignment="Right" FontSize="13"/>
+                            </Grid>
+                            <Grid>
+                                <TextBlock Text="Thời gian:" Foreground="#6B7280" FontSize="13"/>
+                                <TextBlock Text="{Binding ThoiGianDa}" FontWeight="SemiBold"
+                                           HorizontalAlignment="Right" FontSize="13" TextAlignment="Right"/>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <Separator Margin="0,0,0,12"/>
+
+                    <!-- Chi tiết tiền -->
+                    <Grid Margin="0,0,0,8">
+                        <TextBlock Text="Tiền thuê sân:" Foreground="#6B7280" FontSize="13"/>
+                        <TextBlock Text="{Binding TienThueSan, StringFormat='{}{0:N0} đ'}"
+                                   HorizontalAlignment="Right" FontSize="13" FontWeight="SemiBold"/>
+                    </Grid>
+                    <Grid Margin="0,0,0,8">
+                        <TextBlock Text="Tiền đồ ăn/uống:" Foreground="#6B7280" FontSize="13"/>
+                        <TextBlock Text="{Binding TienDoAnUong, StringFormat='{}{0:N0} đ'}"
+                                   HorizontalAlignment="Right" FontSize="13" FontWeight="SemiBold"
+                                   Foreground="#F59E0B"/>
+                    </Grid>
+
+                    <!-- Tổng cộng -->
+                    <Border Background="#FEF3C7" CornerRadius="6" Padding="12,10" Margin="0,4,0,16">
+                        <Grid>
+                            <TextBlock Text="TỔNG CỘNG:" FontWeight="Bold" FontSize="14" Foreground="#92400E"/>
+                            <TextBlock Text="{Binding TongCong, StringFormat='{}{0:N0} đ'}"
+                                       HorizontalAlignment="Right" FontSize="20"
+                                       FontWeight="Bold" Foreground="#EF4444"/>
+                        </Grid>
+                    </Border>
+
+                    <!-- Tiền khách đưa -->
+                    <TextBlock Text="Tiền khách đưa:" Foreground="#6B7280" FontSize="13" Margin="0,0,0,6"/>
+                    <TextBox Text="{Binding TienKhachDua, UpdateSourceTrigger=PropertyChanged}"
+                             Height="46" FontSize="22" FontWeight="Bold"
+                             Padding="12,0" VerticalContentAlignment="Center"
+                             BorderBrush="#D1D5DB">
+                        <TextBox.Resources>
+                            <Style TargetType="Border"><Setter Property="CornerRadius" Value="6"/></Style>
+                        </TextBox.Resources>
+                    </TextBox>
+
+                    <!-- Tiền thối -->
+                    <Border Background="#F0FDF4" CornerRadius="6" Padding="12,10" Margin="0,12,0,0">
+                        <Grid>
+                            <TextBlock Text="Tiền thối:" Foreground="#6B7280" FontSize="13"
+                                       VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding TienThoi, StringFormat='{}{0:N0} đ'}"
+                                       HorizontalAlignment="Right" FontSize="20"
+                                       FontWeight="Bold" Foreground="#10B981"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+
+                <!-- Nút bấm -->
+                <Grid Grid.Row="2" Margin="0,20,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="Hủy bỏ"
+                            Background="#E5E7EB" Foreground="#4B5563"
+                            Style="{StaticResource BtnPrimary}"
+                            Command="{Binding DongCuaSoCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+                    <Button Grid.Column="2" Content="✅  Thanh Toán"
+                            Background="#10B981" Foreground="White"
+                            Style="{StaticResource BtnPrimary}"
+                            Command="{Binding XacNhanThanhToanCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

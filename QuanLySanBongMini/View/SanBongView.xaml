@@ -1,0 +1,152 @@
+﻿<UserControl x:Class="QuanLySanBongMini.View.SanBongView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLySanBongMini.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3.5*"/>
+            <ColumnDefinition Width="6.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="White" CornerRadius="10" Padding="20" Margin="0,0,15,0">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" ShadowDepth="2" Color="LightGray" Opacity="0.5"/>
+            </Border.Effect>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="THÔNG TIN SÂN BÓNG" FontSize="18" FontWeight="Bold" Foreground="#1F2937" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                <StackPanel Grid.Row="1">
+                    <TextBlock Text="Mã sân (Tự động):" FontWeight="SemiBold" Foreground="#4B5563" Margin="0,0,0,5"/>
+                    <TextBox Text="{Binding MaSan}" IsReadOnly="True" Background="#F3F4F6" Height="35" Padding="10,0" VerticalContentAlignment="Center" Margin="0,0,0,15" BorderBrush="#D1D5DB"/>
+
+                    <TextBlock Text="Tên sân (*):" FontWeight="SemiBold" Foreground="#4B5563" Margin="0,0,0,5"/>
+                    <TextBox Text="{Binding TenSan, UpdateSourceTrigger=PropertyChanged}" Height="35" Padding="10,0" VerticalContentAlignment="Center" Margin="0,0,0,15" BorderBrush="#D1D5DB"/>
+
+                    <TextBlock Text="Loại sân:" FontWeight="SemiBold" Foreground="#4B5563" Margin="0,0,0,5"/>
+                    <ComboBox SelectedValue="{Binding LoaiSan}" SelectedValuePath="Content" Height="35" VerticalContentAlignment="Center" Margin="0,0,0,15" BorderBrush="#D1D5DB">
+                        <ComboBoxItem Content="Sân 5 người"/>
+                        <ComboBoxItem Content="Sân 7 người"/>
+                        <ComboBoxItem Content="Sân 11 người"/>
+                    </ComboBox>
+
+                    <TextBlock Text="Giá thuê (VNĐ/Giờ):" FontWeight="SemiBold" Foreground="#4B5563" Margin="0,0,0,5"/>
+                    <TextBox Text="{Binding GiaThue, StringFormat='{}{0:N0}', UpdateSourceTrigger=PropertyChanged}" Height="35" Padding="10,0" VerticalContentAlignment="Center" Margin="0,0,0,15" BorderBrush="#D1D5DB"/>
+
+                    <TextBlock Text="Trạng thái hiện tại:" FontWeight="SemiBold" Foreground="#4B5563" Margin="0,0,0,5"/>
+                    <ComboBox SelectedValue="{Binding TrangThai}" SelectedValuePath="Content" Height="35" VerticalContentAlignment="Center" Margin="0,0,0,15" BorderBrush="#D1D5DB">
+                        <ComboBoxItem Content="Trống"/>
+                        <ComboBoxItem Content="Đang bảo trì"/>
+                    </ComboBox>
+                </StackPanel>
+
+                <WrapPanel Grid.Row="2" Margin="0,20,0,0" HorizontalAlignment="Center">
+                    <Button Content="➕ Thêm" Command="{Binding ThemCommand}" Width="80" Height="40" Background="#10B981" Foreground="White" FontWeight="Bold" BorderThickness="0" Cursor="Hand" Margin="0,0,10,10">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <Button Content="✏️ Sửa" Command="{Binding SuaCommand}" Width="80" Height="40" Background="#3B82F6" Foreground="White" FontWeight="Bold" BorderThickness="0" Cursor="Hand" Margin="0,0,10,10">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <Button Content="❌ Xóa" Command="{Binding XoaCommand}" Width="80" Height="40" Background="#EF4444" Foreground="White" FontWeight="Bold" BorderThickness="0" Cursor="Hand" Margin="0,0,0,10">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </WrapPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Background="White" CornerRadius="8" Padding="15" Margin="0,0,0,15">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth="1" Color="LightGray" Opacity="0.3"/>
+                </Border.Effect>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="🔍 Tìm kiếm sân:" VerticalAlignment="Center" FontWeight="Bold" Foreground="#4B5563" Margin="0,0,10,0"/>
+                    <TextBox Grid.Column="1" Text="{Binding TuKhoaTimKiem, UpdateSourceTrigger=PropertyChanged}" Height="35" Padding="10,0" VerticalContentAlignment="Center" BorderBrush="#D1D5DB">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1" Background="White" CornerRadius="8" Padding="10">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth="1" Color="LightGray" Opacity="0.3"/>
+                </Border.Effect>
+
+                <DataGrid ItemsSource="{Binding DanhSachSan}" 
+                          SelectedItem="{Binding SanDangChon}"
+                          AutoGenerateColumns="False" CanUserAddRows="False" 
+                          HeadersVisibility="Column" GridLinesVisibility="Horizontal" 
+                          HorizontalGridLinesBrush="#E5E7EB" BorderThickness="0" 
+                          RowHeight="40" Background="White">
+
+                    <DataGrid.Resources>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#F3F4F6"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Padding" Value="10"/>
+                        </Style>
+                    </DataGrid.Resources>
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Mã Sân" Binding="{Binding MaSan}" Width="80" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Tên Sân Bóng" Binding="{Binding TenSan}" Width="*" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Loại Sân" Binding="{Binding LoaiSan}" Width="120" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Giá Thuê/h" Binding="{Binding GiaThueGio, StringFormat='{}{0:N0} đ'}" Width="120" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Trạng Thái" Binding="{Binding TrangThai}" Width="120" IsReadOnly="True">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding TrangThai}" Value="Trống">
+                                            <Setter Property="Foreground" Value="#10B981"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding TrangThai}" Value="Đang bảo trì">
+                                            <Setter Property="Foreground" Value="#EF4444"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

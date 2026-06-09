@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a1e4c58aad2442209466ead262818243" Name="Diagram1">
+        <EntityTypeShape EntityType="QLYSANBONGMINIModel.ChiTietHoaDon" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLYSANBONGMINIModel.DatSan" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLYSANBONGMINIModel.HoaDon" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLYSANBONGMINIModel.KhachHang" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLYSANBONGMINIModel.NhanVien" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLYSANBONGMINIModel.SanBong" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="QLYSANBONGMINIModel.FK__ChiTietHoa__MaHD__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="QLYSANBONGMINIModel.FK__DatSan__MaKH__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="QLYSANBONGMINIModel.FK__DatSan__MaSan__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="QLYSANBONGMINIModel.FK__HoaDon__MaDatSan__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="QLYSANBONGMINIModel.FK__HoaDon__MaNV__5812160E" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QLYSANBONGMINIModel.MonAn" Width="1.5" PointX="6.375" PointY="4.875" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
